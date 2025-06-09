@@ -8,7 +8,7 @@ const bookRouter = require('./Routers/bookRouter');
 const authRouter = require('./Routers/authRouter')
 const projectRouter = require('./Routers/projectRouter')
 const bodyParser = require('body-parser');
-const PORT = 5000;
+const PORT = 8080;
 
 // Настроим CORS
 app.use(cors());
