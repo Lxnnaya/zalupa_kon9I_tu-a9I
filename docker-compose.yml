@@ -27,5 +27,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
+    command:
+      - npm run serve
     networks:
       - dev

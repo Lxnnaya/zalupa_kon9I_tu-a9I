@@ -20,7 +20,7 @@ export default defineComponent({
 
 <template>
   <div class="book">
-    <img :src="'/static/img/' + book.cover" alt="">
+    <img :src=" '/static/img/' + (book.cover ? book.cover : '112920-milana-hametova-10.jpg')" alt="" />
     <div class="book__stats">
       <div class="book__name">{{ book.name }}</div>
       <div class="book__authors">{{ book.authors }}</div>
