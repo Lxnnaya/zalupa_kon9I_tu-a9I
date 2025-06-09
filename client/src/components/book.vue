@@ -20,7 +20,7 @@ export default defineComponent({
 
 <template>
   <div class="book">
-    <img v-if="book.cover !== undefined" :src="require('/root/zalupa_kon9I_tu-a9I/server/static/img' + book.cover)" alt="">
+    <img :src="'/static/img/' + book.cover" alt="">
     <div class="book__stats">
       <div class="book__name">{{ book.name }}</div>
       <div class="book__authors">{{ book.authors }}</div>
