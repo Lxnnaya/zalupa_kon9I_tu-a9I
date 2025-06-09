@@ -14,7 +14,7 @@
           alt="user--v1">
     </div>
   </div>
-  <router-view/>
+    <router-view/>
 </template>
 
 <script>

@@ -19,33 +19,30 @@ body {
   width: 100%;
   height: 100vh;
   position: relative;
-  background:$green;
+  background: $green;
 
   span {
     color: #3E9E91;
   }
 
   img {
-    position: absolute;
-    top:-70%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
   }
 }
 
 .header__content {
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
   color: white;
   text-align: center;
+  padding-top: 15%;
+  img{
+    width:15%;
+    height:15%;
+  }
 }
 
 .header__name {
-  font-size: 5vh;text-shadow: 1px 1px 3px black;
+  font-size: 5vh;
+  text-shadow: 1px 1px 3px black;
 }
 
 .header__title {
@@ -153,11 +150,11 @@ body {
   margin-bottom: 2vh;
   position: relative;
 
-  img{
+  img {
     position: absolute;
-    width:3vh;
-    height:3vh;
-    left:35.3%;
+    width: 3vh;
+    height: 3vh;
+    left: 35.3%;
   }
 
   input {
@@ -171,7 +168,7 @@ body {
     width: 30%;
     padding: 1vh;
     font-size: 1.5vh;
-    padding-left:4vh;
+    padding-left: 4vh;
   }
 }
 
@@ -202,46 +199,96 @@ body {
     margin-top: 1vh;
     padding: .7vh 3.5vh;
     font-size: 1.5vh;
-    color:$green;
+    color: $green;
     transition: .2s;
     cursor: pointer;
     width: 100%;
 
     &:hover {
       color: white;
-      background:$green;
+      background: $green;
     }
   }
 }
 
 .books {
   padding: 2vh;
+  overflow-x: hidden;
 }
 
 .book__name {
-  font-size:2vh;
+  font-size: 2vh;
   margin-top: 1vh;
   margin-bottom: .5vh;
   text-align: center;
 }
-.book__authors{
-  font-size:1.5vh;
+
+.book__authors {
+  font-size: 1.5vh;
 }
-.books__create_row {
-  display: flex;
-  border: #DADADA 0.1vh solid;
-  margin-bottom: 2vh;
+
+
+.create__menu_swapping {
+  padding: 5vh 0;
+  z-index: 5;
+
+  .create__menu_img {
+    width: 4vh;
+    height: 4vh;
+    position: relative;
+    border-radius: 50%;
+    z-index: 8;
+    background: $green;
+    cursor: pointer;
+    left: 17.5vh;
+    top: 1vh;
+    rotate: 90deg;
+
+    img {
+      top: 50%;
+      left: 50%;
+      width: 3vh;
+      height: 3vh;
+      transform: translate(-50%, -50%);
+      position: absolute;
+    }
+  }
+}
+
+.books__create_menu {
+  background: white;
+  padding: 0.1vh 1.3vh;
+  padding-left: 2vh;
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
 
   input, button {
-    font-size: 1.5vh;
-    padding: 1vh;
-    outline: none;
-    background: inherit;
+    display: block;
     width: 100%;
+    margin: 1.5vh 0;
+    height: 4vh;
+  }
+
+  input {
+    padding-left: 1vh;
+    color: $green;
+    border: $green 0.2vh solid;
+    font-size: 1.7vh;
   }
 
   button {
+    color: $green;
+    border: $green 0.2vh solid;
+    font-size: 1.7vh;
     cursor: pointer;
+    transition: .2s;
+    background: inherit;
+
+    &:hover {
+      background: $green;
+      color: white;
+    }
   }
 }
 
@@ -358,7 +405,8 @@ body {
     text-align: center;
     padding: .2vh 5vh;
     font-size: 1.5vh;
-    &:first-child{
+
+    &:first-child {
       color: $green;
       border-bottom: $green 0.2vh solid;
     }
@@ -544,15 +592,20 @@ body {
     }
   }
 }
-.tools__buttons{
+.disabled{
+  pointer-events: none;
+}
+.tools__buttons {
   display: flex;
   align-items: center;
-  gap:1.5vh;
-  img{
-    width:3vh;
-    height:3vh;
+  gap: 1.5аvh;
+
+  img {
+    width: 3vh;
+    height: 3vh;
   }
 }
+
 .header {
   width: 100%;
   background: $green;
@@ -639,14 +692,14 @@ body {
 
 .main__writing_cards {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   margin-top: 3vh;
 }
 
 .main__writing_card {
   text-align: center;
   background-color: white;
-  width:25%;
+  width: 25%;
   -webkit-box-shadow: 0px 0px 28px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0px 0px 28px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 28px 2px rgba(0, 0, 0, 0.2);
@@ -654,7 +707,7 @@ body {
 
 .writing_card_background {
   background: $green;
-  height:45vh;
+  height: 45vh;
   position: relative;
 
   img {
@@ -666,16 +719,20 @@ body {
     height: 20vh;
   }
 }
-.writing__card_content{
-  padding:1.5vh;
+
+.writing__card_content {
+  padding: 1.5vh;
 }
-.writing__card_name{
+
+.writing__card_name {
   font-size: 5vh;
 }
-.writing__card_title{
-  font-size:1.5vh;
+
+.writing__card_title {
+  font-size: 1.5vh;
 }
-.main__writing_button{
+
+.main__writing_button {
   display: flex;
   justify-content: center;
   margin-top: 5vh;
@@ -686,7 +743,7 @@ body {
     border: white solid 0.1vh;
     padding: 1.7vh 7vh;
     font-size: 2.5vh;
-    color:white;
+    color: white;
     -webkit-box-shadow: 0px 0px 28px 2px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 0px 0px 28px 2px rgba(34, 60, 80, 0.2);
     box-shadow: 0px 0px 28px 2px rgba(34, 60, 80, 0.2);

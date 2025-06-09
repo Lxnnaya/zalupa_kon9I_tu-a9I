@@ -8,7 +8,8 @@ export default defineComponent({
   },
   methods:{
     async deleteBook(){
-      const response = await axios.post("http://localhost:5000/book/deleteBook", {//@ts-ignore
+      const response = await axios.post("http://localhost:5000/book/deleteBook", {
+        //@ts-ignore
         book_id: this.book.book_id,
       });
       this.$emit("deleteBookFromList",response.data.book_id);
@@ -19,16 +20,12 @@ export default defineComponent({
 
 <template>
   <div class="book">
-
-    <img v-if="book.cover !== undefined" :src="require('/../server/static/img/' + book.cover)" alt="">
+    <img v-if="book.cover !== undefined" :src="require('../server/static/img/' + book.cover)" alt="">
     <div class="book__stats">
       <div class="book__name">{{ book.name }}</div>
       <div class="book__authors">{{ book.authors }}</div>
     </div>
-    <router-link :to="{
-    name:'book',
-    params:{book_id:book.book_id},}
-">
+    <router-link :to="{name:'book',params:{book_id:book.book_id},}">
       <button>Читать</button>
     </router-link>
     <button @click="deleteBook">Удалить</button>
