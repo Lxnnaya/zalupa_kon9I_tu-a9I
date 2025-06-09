@@ -31,7 +31,7 @@ export default {
     const authId = localStorage.getItem("auth_id");
     if (authId) {
       try {
-        const response = await axios.post(`http://localhost:5000/auth/connect`, {
+        const response = await axios.post(`http://192.168.0.25:8080/auth/connect`, {
           user_id: authId,
         });
         store.dispatch("user", response.data);

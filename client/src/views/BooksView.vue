@@ -67,7 +67,7 @@ export default defineComponent({
       formData.append("cover", this.cover);
 
       try {
-        const response = await axios.post("http://localhost:5000/book/createBook", formData);
+        const response = await axios.post("http://192.168.0.25:8080/book/createBook", formData);
         this.books.push(response.data);
         alert("Книга успешно добавлена!");
       } catch (error) {
@@ -77,7 +77,7 @@ export default defineComponent({
   },
   async created() {
     try {
-      const response = await axios.get("http://localhost:5000/book/getBooks");
+      const response = await axios.get("http://192.168.0.25:8080/book/getBooks");
       this.books = response.data;
     } catch (error) {
       console.error("Ошибка загрузки книг:", error);

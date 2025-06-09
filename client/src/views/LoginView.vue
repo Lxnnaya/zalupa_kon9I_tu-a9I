@@ -13,7 +13,7 @@ export default defineComponent({
   },
   methods:{
     async login(){
-      const response = await axios.post("http://localhost:5000/auth/login", {
+      const response = await axios.post("http://192.168.0.25:8080/auth/login", {
         email:this.email,
         password:this.password,
       });

@@ -65,7 +65,7 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.post("http://localhost:5000/project/getProject", {
+      const response = await axios.post("http://192.168.0.25:8080/project/getProject", {
         project_id: this.$route.params.project_id
       });
       this.project = response.data;
@@ -100,7 +100,7 @@ export default {
     async downloadDocx() {
       try {
         const response = await axios.post(
-            'http://localhost:5000/project/downloadProject',
+            'http://192.168.0.25:8080/project/downloadProject',
             { pages: this.pages,
                    name:this.project.name
             },
@@ -196,7 +196,7 @@ export default {
       }
     },
     async saveProject() {
-      const response = await axios.post("http://localhost:5000/project/saveProject", {
+      const response = await axios.post("http://192.168.0.25:8080/project/saveProject", {
         project_id: this.$route.params.project_id,
         text: this.fullContent
       });

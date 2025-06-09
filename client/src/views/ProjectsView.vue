@@ -20,7 +20,7 @@ export default defineComponent({
   },
   methods:{
     async createProject(){
-      const response:any = await axios.post("http://localhost:5000/project/createProject", {
+      const response:any = await axios.post("http://192.168.0.25:8080/project/createProject", {
         name:this.projectName,
         user_id: this.user.user_id
       });
@@ -32,7 +32,7 @@ export default defineComponent({
   async created() {
     if (this.user !== null) {
       try {
-        const response = await axios.post("http://localhost:5000/project/getProjects", {
+        const response = await axios.post("http://192.168.0.25:8080/project/getProjects", {
           user_id: this.user.user_id
         });
         this.projects = response.data;
@@ -44,7 +44,7 @@ export default defineComponent({
   watch: {
     async user(val) {
       if (val !== null) {
-        const response = await axios.post("http://localhost:5000/project/getProjects", {
+        const response = await axios.post("http://192.168.0.25:8080/project/getProjects", {
           user_id: this.user.user_id
         });
         this.projects = response.data;

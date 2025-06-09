@@ -13,7 +13,7 @@
    },
    methods:{
      async registration(){
-       const response = await axios.post("http://localhost:5000/auth/registration", {
+       const response = await axios.post("http://192.168.0.25:8080/auth/registration", {
          email:this.email,
          password:this.password,
          passwordConfirm:this.passwordConfirm

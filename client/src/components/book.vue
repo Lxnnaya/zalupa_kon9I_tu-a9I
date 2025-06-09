@@ -8,7 +8,7 @@ export default defineComponent({
   },
   methods:{
     async deleteBook(){
-      const response = await axios.post("http://localhost:5000/book/deleteBook", {
+      const response = await axios.post("http://192.168.0.25:8080/book/deleteBook", {
         //@ts-ignore
         book_id: this.book.book_id,
       });
